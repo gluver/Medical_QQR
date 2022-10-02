@@ -1,0 +1,5 @@
+jieba==0.42.1
+multiprocess==0.70.13
+transformers==4.22.2
+datasets==2.5.1
+paddlenlp==2.4.0
