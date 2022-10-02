@@ -1,4 +1,4 @@
-使用PaddleNLP公开的 [ERNIE-Health](https://github.com/PaddlePaddle/PaddleNLP/tree/develop/model_zoo/ernie-health) 在KUAKE_QQR训练集合上微调, 进行模型权重平均后在测试集上最高准确率达到 86.03
+我们使用了PaddleNLP公开的 [ERNIE-Health](https://github.com/PaddlePaddle/PaddleNLP/tree/develop/model_zoo/ernie-health) 在KUAKE_QQR训练集合上微调, 进行模型权重平均后在测试集上最高准确率达到 86.03
 
 ## 1.安装
 ### 1.1 安装依赖
