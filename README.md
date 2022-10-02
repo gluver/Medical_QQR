@@ -54,7 +54,8 @@ export CUDA_VISIBLE_DEVICES=0 \
 --dataset KUAKE-QQR \
 --batch_size 32 \
 --max_seq_length 64 \
---init_from_ckpt "checkpoint/model_900"
+--init_from_ckpt "checkpoint/model_900" \
+--output_dir "./"
 ```
 
 对多个checkpoint模型权重进行平均后进行预测,`SWA_ckpts`参数为额外使用的进行权重平均的checkpoint训练步数
@@ -65,7 +66,8 @@ export CUDA_VISIBLE_DEVICES=0 \
 --dataset KUAKE-QQR \
 --batch_size 32 \
 --max_seq_length 64 \
---init_from_ckpt "checkpoint/model_900" 
+--init_from_ckpt "checkpoint/model_900" \
+--output_dir "./" \
 --SWA_ckpts 600 800 1100 1200
 ```
 ## Acknowledge
