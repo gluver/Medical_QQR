@@ -37,7 +37,7 @@ parser.add_argument('--init_from_ckpt', default=None, type=str, help='The path o
 parser.add_argument('--batch_size', default=32, type=int, help='Batch size per GPU/CPU for Inference.')
 # parser.add_argument('--enable_SWA',default=False, type=bool, help='Whether enable Stochastic Weight Averaging（SWA）')
 parser.add_argument('--SWA_ckpts',default=None,type=str,nargs='+',help='The paths of checkpoints to be used for SWA, tokenizer config will be shared')
-
+parser.add_argument('--output_dir',default=None,type=str)
 args = parser.parse_args()
 
 
@@ -201,7 +201,7 @@ def do_predict():
         with open(os.path.join(output_dir, f'{task_name}_test.json'), 'w', encoding='utf-8') as f:
             json.dump(pred_test_examples, f, indent=2, ensure_ascii=False)
         
-    generate_commit('/home/credog/KUAKE_QQR','KUAKE-QQR',test_dataset=test_ds,preds=res)
+    generate_commit(args.output_dir,'KUAKE-QQR',test_dataset=test_ds,preds=res)
                     
                     
 if __name__ == "__main__":
