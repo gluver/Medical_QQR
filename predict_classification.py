@@ -37,7 +37,7 @@ parser.add_argument('--init_from_ckpt', default=None, type=str, help='The path o
 parser.add_argument('--batch_size', default=32, type=int, help='Batch size per GPU/CPU for Inference.')
 # parser.add_argument('--enable_SWA',default=False, type=bool, help='Whether enable Stochastic Weight Averaging（SWA）')
 parser.add_argument('--SWA_ckpts',default=None,type=str,nargs='+',help='The paths of checkpoints to be used for SWA, tokenizer config will be shared')
-parser.add_argument('--output_dir',default=None,type=str)
+parser.add_argument('--output_dir',default='.',type=str)
 args = parser.parse_args()
 
 
