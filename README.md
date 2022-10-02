@@ -3,7 +3,7 @@
 ## 1.安装
 ### 1.1 安装依赖
 ```bash
-conda create --name KUAKE_QQR
+conda create -n KUAKE_QQR python=3.7
 
 conda activate KUAKE_QQR
 
@@ -12,17 +12,19 @@ conda install pip
 ```bash
 conda install paddlepaddle-gpu==2.3.2 cudatoolkit=10.2 --channel https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/Paddle/
 
+pip install -r requirements.txt
+
 git clone https://github.com/PaddlePaddle/PaddleNLP.git
 ```
 
 ### 1.2 覆盖训练代码
 ```bash
-mv train_classification.py    PaddleNLP/model_zoo/ernie-health/train_classification.py
+mv train_classification.py    PaddleNLP/model_zoo/ernie-health/cblue/train_classification.py
 ```
 
 ### 1.3 创建预测代码
 ```bash
-mv predict_classification.py  PaddleNLP/model_zoo/ernie-health/predict_classification.py
+mv predict_classification.py  PaddleNLP/model_zoo/ernie-health/cblue/predict_classification.py
 ```
 ## 2.训练和生成预测结果 
 进入脚本所在目录
