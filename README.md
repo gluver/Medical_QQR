@@ -1,4 +1,4 @@
-我们使用了PaddleNLP公开的 [ERNIE-Health](https://github.com/PaddlePaddle/PaddleNLP/tree/develop/model_zoo/ernie-health) 在KUAKE_QQR训练集合上微调, 进行模型权重平均后在测试集上最高准确率达到 86.03
+我们使用了PaddleNLP公开的 [ERNIE-Health](https://github.com/PaddlePaddle/PaddleNLP/tree/develop/model_zoo/ernie-health) 在KUAKE_QQR训练集合上微调, 进行模型权重平均后在测试集上最高准确率达到了 86.03
 
 ## 1.安装
 ### 1.1 安装依赖
@@ -44,25 +44,26 @@ export CUDA_VISIBLE_DEVICES=0 \
 
 ### 2.2 预测并生成结果
 
-1.使用单checkpoint模型权重
+使用单checkpoint模型权重
+
 ```bash
 export CUDA_VISIBLE_DEVICES=0 \
 && python predict_classification.py \
 --dataset KUAKE-QQR \
 --batch_size 32 \
 --max_seq_length 64 \
---init_from_ckpt "/home/credog/KUAKE_QQR/PaddleNLP/model_zoo/ernie-health/cblue/checkpoint/model_900"
+--init_from_ckpt "checkpoint/model_900"
 ```
 
-2.对多个checkpoint模型权重进行平均后进行预测,`SWA_ckpts`参数为额外使用的进行权重平均的checkpoint步
+对多个checkpoint模型权重进行平均后进行预测,`SWA_ckpts`参数为额外使用的进行权重平均的checkpoint训练步数
+
 ```bash
-export PNLP_ROOT="/home/credog/KUAKE_QQR/PaddleNLP" \
-&& export CUDA_VISIBLE_DEVICES=0 \
+export CUDA_VISIBLE_DEVICES=0 \
 && python predict_classification.py \
 --dataset KUAKE-QQR \
 --batch_size 32 \
 --max_seq_length 64 \
---init_from_ckpt "/home/credog/KUAKE_QQR/PaddleNLP/model_zoo/ernie-health/cblue/checkpoint/model_900" 
+--init_from_ckpt "checkpoint/model_900" 
 --SWA_ckpts 600 800 1100 1200
 ```
 ## Acknowledge
